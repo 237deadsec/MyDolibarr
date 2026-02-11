@@ -48,19 +48,19 @@ class modPressing extends DolibarrModules
             'fk_menu' => 'fk_mainmenu=takepos', 'type' => 'left', 'titre' => 'PressingOrders',
             'mainmenu' => 'takepos', 'leftmenu' => 'pressing_orders', 'url' => '/pressing/takepos/order_list.php',
             'langs' => 'pressing@pressing', 'position' => 120, 'enabled' => '$conf->pressing->enabled',
-            'perms' => '$user->rights->pressing->read', 'user' => 2,
+            'perms' => '$user->rights->pressing->read', 'target' => '', 'user' => 2,
         );
         $this->menu[] = array(
-            'fk_menu' => 'fk_leftmenu=pressing_orders', 'type' => 'left', 'titre' => 'NewPressingOrder',
+            'fk_menu' => 'fk_mainmenu=takepos,fk_leftmenu=pressing_orders', 'type' => 'left', 'titre' => 'NewPressingOrder',
             'mainmenu' => 'takepos', 'leftmenu' => 'pressing_order_new', 'url' => '/pressing/takepos/order_card.php?action=create',
             'langs' => 'pressing@pressing', 'position' => 121, 'enabled' => '$conf->pressing->enabled',
-            'perms' => '$user->rights->pressing->write', 'user' => 2,
+            'perms' => '$user->rights->pressing->write', 'target' => '', 'user' => 2,
         );
         $this->menu[] = array(
-            'fk_menu' => 'fk_leftmenu=pressing_orders', 'type' => 'left', 'titre' => 'PressingServicesAndPrices',
+            'fk_menu' => 'fk_mainmenu=takepos,fk_leftmenu=pressing_orders', 'type' => 'left', 'titre' => 'PressingServicesAndPrices',
             'mainmenu' => 'takepos', 'leftmenu' => 'pressing_services', 'url' => '/pressing/takepos/services.php',
             'langs' => 'pressing@pressing', 'position' => 122, 'enabled' => '$conf->pressing->enabled',
-            'perms' => '$user->rights->pressing->config', 'user' => 2,
+            'perms' => '$user->rights->pressing->config', 'target' => '', 'user' => 2,
         );
 
         $this->dictionaries = array(
